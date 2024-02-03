@@ -7,26 +7,23 @@ import Education from './pages/Education';
 import Projects from './pages/Projects';
 import Work from './pages/Work';
 import Signup from './pages/Signup';
-import { Route,  BrowserRouter as Router, Routes } from 'react-router-dom';
-import Navbar from './NavlinkComponent/Navbar';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-//Routing using browser Router
+//Routing using createBrowserRouter
 function App() {
+
+  const router = createBrowserRouter([
+    {path: "/", element: <Home /> },
+    {path: "/about", element: <About /> },
+    {path: "/education", element: <Education /> },
+    {path: "/work", element: <Work /> },
+    {path: "/projects", element: <Projects /> },
+    {path: "/contact", element: <Contact /> },
+    {path: "/signup", element: <Signup /> }
+  ]);
   return (
-    <div className="App">
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/work' element={<Work/>} />
-          <Route path='/projects' element={<Projects/>} />
-          <Route path='/education' element={<Education/>} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/Signup' element={<Signup/>} />
-          
-        </Routes>
-      </Router>
+    <div className='App'>
+      <RouterProvider router={router}/>
     </div>
   );
 }
