@@ -1,31 +1,10 @@
-import React from 'react';
-import './App.css';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Education from './pages/Education';
-import Projects from './pages/Projects';
-import Work from './pages/Work';
-import Signup from './pages/Signup';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from "react"
+import Main from "./BrowserRouter/main.jsx";
 
-//Routing using createBrowserRouter
-function App() {
-
-  const router = createBrowserRouter([
-    {path: "/", element: <Home /> },
-    {path: "/about", element: <About /> },
-    {path: "/education", element: <Education /> },
-    {path: "/work", element: <Work /> },
-    {path: "/projects", element: <Projects /> },
-    {path: "/contact", element: <Contact /> },
-    {path: "/signup", element: <Signup /> }
-  ]);
-  return (
-    <div className='App'>
-      <RouterProvider router={router}/>
+export default function App(){
+  return(
+    <div>
+      <Main/>
     </div>
-  );
+  )
 }
-
-export default App;
