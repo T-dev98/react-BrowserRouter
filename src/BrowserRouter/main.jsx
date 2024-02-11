@@ -4,6 +4,7 @@ import Home from "../BrowserRouter/pages/home";
 import About from "../BrowserRouter/pages/about";
 import Work from "../BrowserRouter/pages/work";
 import Contact from "../BrowserRouter/pages/contact";
+import Error from "../BrowserRouter/pages/error"
 
 // routing using Browser router
 export default function Main(){
@@ -15,6 +16,7 @@ export default function Main(){
                 <Route path="about" element={<About/>}/>
                 <Route path="work" element={<Work/>}/>
                 <Route path="contact" element={<Contact/>}/>
+                <Route path="*" element={<Error />} />
             </Routes>
             </BrowserRouter>
         </div>
